@@ -49,7 +49,6 @@ footer { background: var(--white); padding: 4rem 5% 2rem; margin-top: 40px; bord
 @media (max-width: 900px) {
 
    @media (max-width: 900px) {
-    /* 1. الحاوية الأساسية: مرونة كاملة في سطر واحد */
     header, #navbar {
         display: flex !important;
         flex-direction: row !important;
@@ -61,57 +60,49 @@ footer { background: var(--white); padding: 4rem 5% 2rem; margin-top: 40px; bord
         gap: 0 !important;
     }
 
-    /* 2. اللوجو: ثابت في مكانه على الشمال */
     .logo {
         font-size: 0.65rem !important;
         flex-shrink: 0 !important;
         margin-right: 5px !important;
     }
 
-    /* 3. دمج اللينكات والاكشنز (الكارت والاسم) في خط واحد */
     nav, .nav-links, .nav-actions, .user-box {
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
         justify-content: flex-end !important;
-        gap: 0px !important; /* المسافة اللي بتخلي الشكل منظم */
+        gap: 0px !important;
         margin: 0 !important;
         padding: 0 !important;
     }
 
-    /* 4. توحيد الاستايل لكل النصوص (اللينكات + الكارت + الاسم) */
     .nav-links a, 
     .nav-actions a, 
     #user-display {
         display: inline-block !important;
-        font-size: 0.48rem !important; /* الحجم اللي طلبتيه */
+        font-size: 0.48rem !important;
         font-weight: 800 !important;
         color: var(--text-main) !important;
         text-decoration: none !important;
-        white-space: nowrap !important; /* يمنع الاسم ينزل سطر جديد مهما حصل */
+        white-space: nowrap !important; 
         text-transform: uppercase;
     }
 
-    /* 5. تمييز الكارت واسم المستخدم بنفس اللون والخط اللي تحت */
     .nav-actions a, #user-display {
         color: #b76e79 !important;
         border-bottom: 1px solid #b76e79 !important;
     }
 
-    /* 6. إخفاء أي عناصر زيادة عشان نوفر مساحة */
     .dropdown, .user-box i {
         display: none !important;
     }
 }
-    /* تمييز الكارت بلون مختلف قليلاً إذا أردتِ */
    .cart {
         color: #b76e79 !important;
         text-decoration: underline !important;
         cursor: pointer !important;
     
     }
-
-    /* --- 5. باقي الصفحة (المنتجات) --- */
     .products-hero {
         padding: 30px 10px !important;
         flex-direction: column;
