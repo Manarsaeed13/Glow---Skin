@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Now - GlowSkin</title>
+<link rel="icon" type="image/png"  href= "images/icon.jpeg">  
+<link rel="stylesheet" href="testt.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    
+<nav id="navbar">
+
+    <div class="logo">GlowSkin</div>
+
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="testt.html">Order Now</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <div class="nav-actions">
+        <a href="ccart.html" style="color:#b76e79;">
+            Cart(<span id="cart-count">0</span>)
+        </a>
+
+        <div class="user-box">
+               <span id="user-display" style="font-size: 20px;">...</span>
+                <div class="dropdown" id="user-dropdown">
+                    <div class="dropdown-item" id="add-account-btn"><a href="test2.html" style="text-decoration: none; color: #000;">Add Account</a></div>
+                    <div class="dropdown-item" id="logout-btn">Logout</div>
+                </div>
+            </div>
+    </div>
+
+</nav>
+</header>
+
+<div class="container">
+    <div class="page-title">
+        <h1>Order Now</h1>
+        <p>Complete your purchase and glow with us</p>
+    </div>
+
+
+            <!-- Order Specifics -->
+            <div class="card">
+                <h3>Order Specifics</h3>
+                <label>Product</label>
+                <select id="productSelect">
+                    <option value="Serum" data-price="29.99">Serum — $29.99</option>
+                    <option value="Avène Sunscreen SPF 50" data-price="24.99">Avène Sunscreen SPF 50 — $24.99</option>
+                    <option value="Cell Shock Skincare Set" data-price="89.99">Cell Shock Skincare Set — $89.99</option>
+                    <option value="Evighet Eye Cream" data-price="34.99">Evighet Eye Cream — $34.99</option>
+                    <option value="Garnier Pure Active" data-price="12.99">Garnier Pure Active — $12.99</option>
+                    <option value="Mary Kay Set" data-price="69.99">Mary Kay Set — $69.99</option>
+                    <option value="CeraVe Cleanser" data-price="15.99">CeraVe Cleanser — $15.99</option>
+                    <option value="Makeup Remover" data-price="9.99">Makeup Remover — $9.99</option>
+                    <option value="Nivea Men Face Wash" data-price="10.99">Nivea Men Face Wash — $10.99</option>
+                    <option value="Gold Skincare Set" data-price="119.99">Gold Skincare Set — $119.99</option>
+                    <option value="Refresh Jelly Mask" data-price="19.99">Refresh Jelly Mask — $19.99</option>
+                    <option value="Pond's BB Cream" data-price="11.99">Pond's BB Cream — $11.99</option>
+                    <option value="Bali Body BB Cream" data-price="22.99">Bali Body BB Cream — $22.99</option>
+                </select>
+
+                <label>Quantity</label>
+                <input type="number" id="qty" value="1" min="1">
+
+                <label>Payment Method</label>
+                <select id="payment">
+                    <option>Card</option>
+                    <option>PayPal</option>
+                    <option>Cash on Delivery</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Right: Summary -->
+        <div class="summary-card">
+            <h3>Order Summary</h3>
+            <div class="summary-row">
+                <span id="summaryName">—</span>
+                <span id="summaryPrice">$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Quantity</span>
+                <span id="summaryQty">1</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping</span>
+                <span>Free</span>
+            </div>
+            <hr class="divider">
+            <div class="summary-row total-row">
+                <span>Total</span>
+                <span id="summaryTotal">$0.00</span>
+            </div>
+            <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
+        </div>
+    </div>
+</div>
+<!-- CTA Section -->
+<div class="ready-to-glow">
+    <h2>Ready to Glow?</h2>
+    <p>Discover our full range of botanical elixirs and science-backed treatments tailored for your skin's unique journey.</p>
+    <button onclick="window.location.href='products.html'">Shop More</button>
+    <button class="view-rituals">View Rituals</button>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>About GlowSkin</h4>
+            <ul>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Ingredients</a></li>
+                <li><a href="#">Sustainability</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Shipping & Returns</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Brand</h4>
+            <ul>
+                <li><a href="#">Press</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Newsletter</h4>
+            <p>Subscribe for exclusive offers.</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Email address">
+                <button>Join</button>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="style.js"></script>
+<script>
+// ─── Prices map (matches the <option> values) ───────────────────────────────
+const PRICES = {
+    "Serum": 29.99,
+    "Avène Sunscreen SPF 50": 24.99,
+    "Cell Shock Skincare Set": 89.99,
+    "Evighet Eye Cream": 34.99,
+    "Garnier Pure Active": 12.99,
+    "Mary Kay Set": 69.99,
+    "CeraVe Cleanser": 15.99,
+    "Makeup Remover": 9.99,
+    "Nivea Men Face Wash": 10.99,
+    "Gold Skincare Set": 119.99,
+    "Refresh Jelly Mask": 19.99,
+    "Pond's BB Cream": 11.99,
+    "Bali Body BB Cream": 22.99
+};
+
+const productSelect = document.getElementById("productSelect");
+const qtyInput      = document.getElementById("qty");
+const summaryName   = document.getElementById("summaryName");
+const summaryPrice  = document.getElementById("summaryPrice");
+const summaryQty    = document.getElementById("summaryQty");
+const summaryTotal  = document.getElementById("summaryTotal");
+const cartLink      = document.getElementById("cartLink");
+
+// ─── Pre-fill product if coming from products.html ──────────────────────────
+const saved = JSON.parse(localStorage.getItem("selectedProduct"));
+if (saved && saved.name) {
+    // Select the matching option
+    for (let opt of productSelect.options) {
+        if (opt.value === saved.name) {
+            opt.selected = true;
+            break;
+        }
+    }
+}
+
+// ─── Update summary whenever product or qty changes ─────────────────────────
+function updateSummary() {
+    const name  = productSelect.value;
+    const price = PRICES[name] || 0;
+    const qty   = Math.max(1, parseInt(qtyInput.value) || 1);
+
+    qtyInput.value = qty; // clamp to min 1
+
+    summaryName.textContent  = name;
+    summaryPrice.textContent = "$" + price.toFixed(2);
+    summaryQty.textContent   = qty;
+    summaryTotal.textContent = "$" + (price * qty).toFixed(2);
+}
+
+productSelect.addEventListener("change", updateSummary);
+qtyInput.addEventListener("input", updateSummary);
+updateSummary(); // run on load
+
+// ─── Update cart icon count ──────────────────────────────────────────────────
+function refreshCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartLink.textContent = "Cart (" + count + ")";
+}
+refreshCartCount();
+
+// ─── Place Order → add to cart → go to cart.html ────────────────────────────
+function placeOrder() {
+
+    const name  = productSelect.value;
+    const price = PRICES[name] || 0;
+    const qty   = Math.max(1, parseInt(qtyInput.value) || 1);
+
+    const item = {
+        name: name,
+        price: price,
+        quantity: qty };
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(item);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    window.location.href = "ccart.html";
+}
+
+</script>
+</body>
+</html>

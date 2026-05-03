@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Us</title>
+  <link rel="icon" type="image/png"  href= "images/icon.jpeg">  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+
+ 
+<nav id="navbar">
+
+    <div class="logo">GlowSkin</div>
+
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="testt.html">Order Now</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <div class="nav-actions">
+        <a href="ccart.html" style="color:#b76e79;">
+            Cart(<span id="cart-count">0</span>)
+        </a>
+
+        <div class="user-box">
+               <span id="user-display" style="font-size: 20px;">...</span>
+                <div class="dropdown" id="user-dropdown">
+                    <div class="dropdown-item" id="add-account-btn"><a href="test2.html" style="text-decoration: none; color: #000;">Add Account</a></div>
+                   <div class="dropdown-item" id="logout-btn">Logout</div>
+                </div>
+            </div>
+    </div>
+
+</nav>
+
+<body>
+
+<div class="contact-header">
+  <h1>Let's Connect</h1>
+  <p>Whether you have a question or just want to share your glow journey, we're here to listen.</p>
+</div>
+
+<!-- Section -->
+<div class="contact-container">
+
+  <!-- Left -->
+  <div class="contact-info">
+    <h3>Reach Out Directly</h3>
+
+    <p><strong>Email:</strong><br> glowskin@gmail.com</p>
+    <p><strong>Visit:</strong><br> 1221 Botanical Way<br>San Francisco, CA</p>
+    <p><strong>Hours:</strong><br> Mon-Fri: 9am - 6pm<br>Sat: 10am - 4pm</p>
+
+    <img src="images/contact.png">
+  </div>
+<form id="contactForm" class="contact-form">
+
+  <div class="row">
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email Address" required>
+  </div>
+
+  <textarea id="message" placeholder="Your Message" required></textarea>
+
+  <button type="submit" class="contact-buttons">Send Message</button>
+
+</form>
+
+
+</div>
+<footer id="footer">
+    <div class="footer-grid">
+
+     <div class="footer-col">
+           <h4>About GlowSkin</h4>
+           <ul>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Ingredients</a></li>
+                <li><a href="#">Sustainability</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Shipping & Returns</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Brand</h4>
+            <ul>
+                <li><a href="#">Press</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Newsletter</h4>
+            <p>Subscribe for exclusive offers.</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Email address">
+                <button>Join</button>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<!-- <script>  
+    const userDisplay = document.getElementById('user-display');
+    const userDropdown = document.getElementById('user-dropdown');
+    const addAccountBtn = document.getElementById('add-account-btn');
+    const logoutBtn = document.getElementById('logout-btn');
+    const cartCountEl = document.getElementById('cart-count');
+    const addToCartBtns = document.querySelectorAll('.add-to-cart');
+    const reveals = document.querySelectorAll('.reveal');
+
+   
+    function updateUserData() {
+        const username = localStorage.getItem('username');
+        if (userDisplay) {
+            userDisplay.textContent = username ? 'Hello, ' + username : '···';
+        }
+    }
+
+    if (userDisplay && userDropdown) {
+        userDisplay.addEventListener('click', (e) => {
+            e.stopPropagation();
+            userDropdown.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!userDisplay.contains(e.target) && !userDropdown.contains(e.target)) {
+                userDropdown.classList.remove('active');
+            }
+        });
+    }
+
+    if (addAccountBtn) {
+        addAccountBtn.addEventListener('click', () => {
+            const nameInput = prompt('Enter your name:');
+            if (nameInput && nameInput.trim() !== '') {
+                localStorage.setItem('username', nameInput.trim());
+                updateUserData();
+                userDropdown.classList.remove('active');
+            }
+        });
+    }
+
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem('username');
+            updateUserData();
+            userDropdown.classList.remove('active');
+            window.location.reload();
+        });
+    }
+</script> -->
+<script src="style.js"></script>
+
+</body>
+</html>

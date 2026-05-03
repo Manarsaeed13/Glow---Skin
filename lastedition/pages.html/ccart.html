@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart - GlowSkin</title>
+<link rel="icon" type="image/png"  href= "images/icon.jpeg">  
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="ccart.css">
+</head>
+<body>
+
+<header>
+    
+
+<nav id="navbar">
+
+    <div class="logo">GlowSkin</div>
+
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="testt.html">Order Now</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <div class="nav-actions">
+        <a href="ccart.html" style="color:#b76e79;">
+            Cart(<span id="cart-count">0</span>)
+        </a>
+
+        <div class="user-box">
+              <span id="user-display" style="font-size: 20px;">...</span>
+                <div class="dropdown" id="user-dropdown">
+                    <div class="dropdown-item" id="add-account-btn"><a href="test2.html" style="text-decoration: none; color: #000;">Add Account</a></div>
+                     <div class="dropdown-item" id="logout-btn">Logout</div>
+                </div>
+            </div>
+    </div>
+
+</nav>
+</header>
+
+<div class="container">
+    <div class="page-title">
+        <h1>Your Cart </h1>
+        <p>Review your items before checkout</p>
+    </div>
+
+
+
+            
+    <div class="cart-layout">
+        <!-- Items Column -->
+        <div>
+            <div class="cart-items" id="cartItems"></div>
+            <div class="empty-cart" id="emptyCart">
+                <div class="empty-icon"></div>
+                <h3>Your cart is empty</h3>
+                <p>Looks like you haven't added anything yet.</p>
+                <a href="products.html">Browse Products</a>
+            </div>
+        </div>
+
+        <!-- Summary Column -->
+        <div class="summary-card">
+            <h3>Order Summary</h3>
+
+            <div class="summary-row">
+                <span id="itemCountLabel">0 items</span>
+                <span id="subtotalVal">$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping</span>
+                <span style="color:#4caf50;">Free</span>
+            </div>
+            <div class="promo-row">
+                <input type="text" id="promoInput" placeholder="Promo code">
+                <button onclick="applyPromo()">Apply</button>
+            </div>
+
+            <div class="summary-row" id="discountRow" style="display:none; color:#c0392b;">
+                <span>Discount</span>
+                <span id="discountVal">-$0.00</span>
+            </div>
+
+            <hr class="summary-divider">
+            <div class="summary-total">
+                <span>Total</span>
+                <span id="totalVal">$0.00</span>
+            </div>
+
+            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+            <a class="continue-link" href="products.html">← Continue Shopping</a>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="page-layout">
+
+    <!-- Shipping Form -->
+    <div class="form-section">
+        <div class="card">
+            <h3>Shipping Details</h3>
+
+            <label>Full Name</label>
+            <input type="text" id="fullName" placeholder="Jane Doe" required>
+
+            <label>Email</label>
+            <input type="email" id="email" placeholder="jane@email.com">
+
+            <label>Phone</label>
+            <input type="text" id="phone" placeholder="+1 234 567 890">
+
+            <label>Address</label>
+            <textarea id="address" placeholder="123 Glow Street..."></textarea>
+        </div>
+    </div>
+   
+
+</div>
+<!-- Footer -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>About GlowSkin</h4>
+            <ul>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="#">Ingredients</a></li>
+                <li><a href="#">Sustainability</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Shipping & Returns</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Brand</h4>
+            <ul>
+                <li><a href="#">Press</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Newsletter</h4>
+            <p style="color:#888; font-size:14px; margin-bottom:8px;">Subscribe for exclusive offers.</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Email address "id="email">
+                <button onclick="">Join</button>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="style.js"></script>
+
+<script>
+let x=document.getElementById("email");
+function m(){
+    window.alert("join seccussefully");
+}
+const ICONS = {
+    "Serum": "💧",
+    "Avène Sunscreen SPF 50": "☀️",
+    "Cell Shock Skincare Set": "✨",
+    "Evighet Eye Cream": "👁️",
+    "Garnier Pure Active": "🌿",
+    "Mary Kay Set": "🌸",
+    "CeraVe Cleanser": "🫧",
+    "Makeup Remover": "🧴",
+    "Nivea Men Face Wash": "💙",
+    "Gold Skincare Set": "🏆",
+    "Refresh Jelly Mask": "🍃",
+    "Pond's BB Cream": "🌼",
+    "Bali Body BB Cream": "🌺"
+};
+
+let discountPercent = 0;
+
+
+function getCart() {
+    return JSON.parse(localStorage.getItem("cart")) || [];
+}
+
+function saveCart(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function renderCart() {
+    const cart = getCart();
+    const container = document.getElementById("cartItems");
+    const emptyState = document.getElementById("emptyCart");
+
+    container.innerHTML = "";
+
+    if (cart.length === 0) {
+        emptyState.style.display = "block";
+        updateSummary(cart);
+        updateCartLink(cart);
+        return;
+    }
+
+    emptyState.style.display = "none";
+
+    cart.forEach((item, index) => {
+        const icon = ICONS[item.name] || "🧴";
+        const lineTotal = (Number(item.price) * item.quantity).toFixed(2);
+
+        const el = document.createElement("div");
+        el.className = "cart-item";
+        el.innerHTML = `
+            <div class="item-icon">${icon}</div>
+            <div class="item-info">
+                <div class="item-name">${item.name}</div>
+                <div class="item-price-unit">$${Number(item.price).toFixed(2)} each</div>
+            </div>
+            <div class="qty-control">
+                <button onclick="changeQty(${index}, -1)">−</button>
+                <span>${item.quantity}</span>
+                <button onclick="changeQty(${index}, +1)">+</button>
+            </div>
+            <div class="item-total">$${lineTotal}</div>
+            <button class="remove-btn" onclick="removeItem(${index})" title="Remove">×</button>
+        `;
+        container.appendChild(el);
+    });
+
+    updateSummary(cart);
+    updateCartLink(cart);
+}
+
+// ── Change qty ───────────────────────────────────────────────────────────────
+function changeQty(index, delta) {
+    let cart = getCart();
+    cart[index].quantity += delta;
+    if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+    }
+    saveCart(cart);
+    renderCart();
+}
+
+// ── Remove item ──────────────────────────────────────────────────────────────
+function removeItem(index) {
+    let cart = getCart();
+    cart.splice(index, 1);
+    saveCart(cart);
+    renderCart();
+}
+
+// ── Update summary numbers ───────────────────────────────────────────────────
+function updateSummary(cart) {
+    const totalItems = cart.reduce((s, i) => s + i.quantity, 0);
+  const subtotal = cart.reduce((s, i) => 
+    s + (Number(i.price) * i.quantity), 0
+);
+    const discount   = subtotal * (discountPercent / 100);
+    const total      = subtotal - discount;
+
+    document.getElementById("itemCountLabel").textContent = totalItems + (totalItems === 1 ? " item" : " items");
+    document.getElementById("subtotalVal").textContent = "$" + subtotal.toFixed(2);
+    document.getElementById("totalVal").textContent    = "$" + total.toFixed(2);
+
+    const discountRow = document.getElementById("discountRow");
+    if (discount > 0) {
+        discountRow.style.display = "flex";
+        document.getElementById("discountVal").textContent = "-$" + discount.toFixed(2);
+    } else {
+        discountRow.style.display = "none";
+    }
+}
+
+// ── Update cart link count in header ────────────────────────────────────────
+function updateCartLink(cart) {
+    const count = cart.reduce((s, i) => s + i.quantity, 0);
+    document.getElementById("cartLink").textContent = "Cart (" + count + ")";
+}
+
+// ── Promo code ───────────────────────────────────────────────────────────────
+function applyPromo() {
+    const code = document.getElementById("promoInput").value.trim().toUpperCase();
+    const CODES = { "GLOW10": 10, "SKIN20": 20, "WELCOME15": 15 };
+
+    if (CODES[code]) {
+        discountPercent = CODES[code];
+        alert(" Promo applied! " + discountPercent + "% off your order.");
+        renderCart();
+    } else {
+        alert(" Invalid promo code. Try GLOW10 or SKIN20.");
+    }
+}
+
+// ── Checkout ─────────────────────────────────────────────────────────────────
+function checkout() {
+    
+    const fullName = document.getElementById("fullName").value.trim();
+    const email    = document.getElementById("email").value.trim();
+    const phone    = document.getElementById("phone").value.trim();
+    const address  = document.getElementById("address").value.trim();
+
+    if (fullName === "" || email === "" || phone === "" || address === "") {
+        alert(" Please fill all shipping details before checkout!");
+        return;
+    }
+ document.getElementById("fullName").value = "";
+document.getElementById("email").value = "";
+document.getElementById("phone").value = "";
+document.getElementById("address").value = "";
+
+
+    const cart = getCart();
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+    alert(" Order placed successfully! Thank you for shopping with GlowSkin ");
+    localStorage.removeItem("cart");
+    renderCart();
+
+ 
+}
+
+// ── Init ─────────────────────────────────────────────────────────────────────
+
+renderCart();
+</script>
+</body>
+</html>

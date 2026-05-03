@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowSkin - Luxury Skincare</title>
+    <link rel="icon" type="image/png"  href= "images/icon.jpeg">  
+    <link rel="stylesheet" href="res.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo">GlowSkin</div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="testt.html">Order Now</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+       <div class="nav-actions">
+        <a href="ccart.html" style="color:#b76e79;">
+            Cart(<span id="cart-count">0</span>)
+        </a>
+
+            <div class="user-box">
+              <span id="user-display" style="font-size: 20px;">...</span>
+                <div class="dropdown" id="user-dropdown">
+                    <div class="dropdown-item" id="add-account-btn">Add Account</div>
+                    <div class="dropdown-item" onclick="logout()">Logout</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div id="authPage" class="page active">
+            <div class="login-card">
+                <div class="image-side">
+                    <img src="images/signphoto.jpg" alt="GlowSkin Products">
+                </div>
+
+                <div class="form-side">
+                    <div id="authForm">
+                        <h2 id="authTitle">Welcome Back</h2>
+                        <p id="authDesc">Please enter your details to access the world of GlowSkin.</p>
+                        
+                        <div class="input-group" id="nameField" style="display: none;">
+                            <label>Full Name</label>
+                            <input type="text" id="fullname" placeholder="e.g., Sama Wagih">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Email Address</label>
+                            <input type="email" id="email" placeholder="example@domain.com">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Password</label>
+                            <input type="password" id="password" placeholder="********">
+                        </div>
+
+                        <div class="input-group" id="confirmField" style="display: none;">
+                            <label>Confirm Password</label>
+                            <input type="password" id="confirmPassword" placeholder="********">
+                        </div>
+
+                        <button onclick="handleAuth()" id="mainBtn">Login</button>
+                        
+                        <p class="switch-auth" id="toggleAuth" onclick="toggleMode()">Don't have an account? Sign up now</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>About GlowSkin</h4>
+                <ul>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="#">Ingredients</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Email address">
+                    <button>Join</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="test2.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+:root {
+    --bg-color: #fdf8f6;
+    --card-bg: #ecebe6;
+    --text-main: #4a443f;
+    --accent-brown: #8b5e52;
+    --input-bg: #e2e1db;
+    --primary: #b76e79;
+    --white: #ffffff;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg-color); color: var(--text-main); padding: 20px; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: white; flex-wrap: wrap; border-radius: 12px; margin-bottom: 10px; }
+.logo { font-family: 'Georgia', serif; font-size: 1.3rem; font-weight: 700; color: #f37fb5; }
+nav a { margin: 5px 10px; text-decoration: none; color: var(--text-main); font-size: 14px; }
+.container { max-width: 1100px; margin: 40px auto; }
+.page-title { text-align: center; margin-bottom: 40px; }
+.page-title h1 { font-size: 42px; font-family: 'Georgia', serif; }
+.page-title p { font-size: 16px; color: #888; }
+.main-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
+.form-section { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.card { background-color: var(--card-bg); border-radius: 20px; padding: 30px; }
+.card h3 { margin-bottom: 20px; font-family: 'Georgia', serif; }
+label { display: block; font-size: 12px; margin-bottom: 5px; color: #777; }
+input, select, textarea { width: 100%; padding: 12px; border: none; background: var(--input-bg); border-radius: 8px; margin-bottom: 15px; color: var(--text-main); font-size: 14px; }
+textarea { resize: vertical; min-height: 80px; }
+.summary-card { background: white; padding: 25px; border-radius: 20px; height: fit-content;  top: 20px; }
+.summary-card h3 { margin-bottom: 20px; font-family: 'Georgia', serif; }
+.summary-row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 15px; }
+.divider { border: none; border-top: 1px solid #eee; margin: 15px 0; }
+.total-row { font-weight: bold; font-size: 18px; }
+.place-order-btn { background: var(--accent-brown); color: white; width: 100%; padding: 15px; border: none; border-radius: 30px; cursor: pointer; font-size: 16px; margin-top: 15px; transition: opacity 0.2s; }
+.place-order-btn:hover { opacity: 0.85; }
+.ready-to-glow { background-color: #f1e9e4; text-align: center; padding: 60px 20px; margin-top: 50px; border-radius: 30px; }
+.ready-to-glow h2 { font-size: 32px; font-family: 'Georgia', serif; margin-bottom: 12px; }
+.ready-to-glow p { color: #888; margin-bottom: 20px; }
+.ready-to-glow button { background: var(--accent-brown); color: white; padding: 12px 30px; border: none; border-radius: 25px; margin: 8px; cursor: pointer; font-size: 14px; }
+.view-rituals { background: transparent !important; color: var(--accent-brown) !important; border: 1px solid var(--accent-brown) !important; }
+footer { background: var(--white); padding: 4rem 5% 2rem; margin-top: 40px; border-radius: 20px; }
+.footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+.footer-col h4 { margin-bottom: 1rem; font-size: 1rem; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.6rem; }
+.footer-col a { text-decoration: none; color: #888; }
+.footer-col a:hover { color: var(--primary); }
+.newsletter-form { display: flex; gap: 8px; margin-top: 10px; }
+.newsletter-form input { margin-bottom: 0; }
+.newsletter-form button { background: #be7e6c; color: white; border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; white-space: nowrap; }
+
+@media (max-width: 900px) {
+
+   @media (max-width: 900px) {
+    /* 1. الحاوية الأساسية: مرونة كاملة في سطر واحد */
+    header, #navbar {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 0 0px !important; 
+        height: 40px !important;
+        width: 100% !important;
+        gap: 0 !important;
+    }
+
+    /* 2. اللوجو: ثابت في مكانه على الشمال */
+    .logo {
+        font-size: 0.65rem !important;
+        flex-shrink: 0 !important;
+        margin-right: 5px !important;
+    }
+
+    /* 3. دمج اللينكات والاكشنز (الكارت والاسم) في خط واحد */
+    nav, .nav-links, .nav-actions, .user-box {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 0px !important; /* المسافة اللي بتخلي الشكل منظم */
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* 4. توحيد الاستايل لكل النصوص (اللينكات + الكارت + الاسم) */
+    .nav-links a, 
+    .nav-actions a, 
+    #user-display {
+        display: inline-block !important;
+        font-size: 0.48rem !important; /* الحجم اللي طلبتيه */
+        font-weight: 800 !important;
+        color: var(--text-main) !important;
+        text-decoration: none !important;
+        white-space: nowrap !important; /* يمنع الاسم ينزل سطر جديد مهما حصل */
+        text-transform: uppercase;
+    }
+
+    /* 5. تمييز الكارت واسم المستخدم بنفس اللون والخط اللي تحت */
+    .nav-actions a, #user-display {
+        color: #b76e79 !important;
+        border-bottom: 1px solid #b76e79 !important;
+    }
+
+    /* 6. إخفاء أي عناصر زيادة عشان نوفر مساحة */
+    .dropdown, .user-box i {
+        display: none !important;
+    }
+}
+    /* تمييز الكارت بلون مختلف قليلاً إذا أردتِ */
+   .cart {
+        color: #b76e79 !important;
+        text-decoration: underline !important;
+        cursor: pointer !important;
+    
+    }
+
+    /* --- 5. باقي الصفحة (المنتجات) --- */
+    .products-hero {
+        padding: 30px 10px !important;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image img {
+        width: 140px !important; 
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .card h3 {
+        font-size: 0.7rem !important;
+    }
+}

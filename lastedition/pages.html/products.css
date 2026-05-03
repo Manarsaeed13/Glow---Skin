@@ -1,0 +1,508 @@
+
+.products-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 140px 8% 80px;
+    gap: 50px;
+}
+.order-btn{
+     display: block;
+    text-align: center;
+    padding: 10px;
+    background: #7d4a45;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text .sub {
+    letter-spacing: 2px;
+    font-size: 12px;
+    color: #999;
+}
+
+.hero-text h1 {
+    font-size: 60px;
+    margin: 10px 0;
+}
+
+.hero-text span {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* IMAGE */
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    width: 350px;
+    border-radius: 20px;
+}
+
+/* NOTE */
+.note {
+    position: absolute;
+    bottom: -25px;
+    left: -40px;
+    background: #e7a7a0;
+    color: white;
+    padding: 15px 18px;
+    border-radius: 12px;
+    font-size: 12px;
+    width: 180px;
+}
+
+
+
+.dropdown {
+    position: absolute;
+    top: 150%;
+    right: 0;
+    background: var(--white);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    width: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    padding: 1rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background: var(--bg-color);
+    color: var(--primary);
+}
+
+/* GRID */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    padding: 50px 8%;
+}
+
+/* CARD */
+.card {
+    background: #fff;
+    padding: 18px;
+    border-radius: 20px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* IMAGE */
+.card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+/* TITLE */
+.card h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+/* PRICE */
+.price {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* DESC */
+.desc {
+    font-size: 12px;
+    color: #777;
+    margin: 5px 0 10px;
+}
+
+/* BUTTON */
+.card a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background: #7d4a45;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.card a:hover {
+    background: var(--primary);
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 100px 20px;
+    background: #f3e8e6;
+    margin: 60px 8%;
+    border-radius: 25px;
+}
+
+.cta h2 {
+    font-size: 36px;
+    color: var(--primary);
+}
+
+.cta p {
+    color: #777;
+    margin: 10px 0 20px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.primary {
+    background: var(--primary);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+.secondary {
+    background: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: var(--primary);
+}
+.nav-links ,.nav-actions{
+    display: flex;
+
+}
+
+.products-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 140px 8% 80px;
+    gap: 50px;
+}
+.order-btn{
+     display: block;
+    text-align: center;
+    padding: 10px;
+    background: #7d4a45;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text .sub {
+    letter-spacing: 2px;
+    font-size: 12px;
+    color: #999;
+}
+
+.hero-text h1 {
+    font-size: 60px;
+    margin: 10px 0;
+}
+
+.hero-text span {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* IMAGE */
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    width: 350px;
+    border-radius: 20px;
+}
+
+/* NOTE */
+.note {
+    position: absolute;
+    bottom: -25px;
+    left: -40px;
+    background: #e7a7a0;
+    color: white;
+    padding: 15px 18px;
+    border-radius: 12px;
+    font-size: 12px;
+    width: 180px;
+}
+
+
+
+.dropdown {
+    position: absolute;
+    top: 150%;
+    right: 0;
+    background: var(--white);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    width: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    padding: 1rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background: var(--bg-color);
+    color: var(--primary);
+}
+
+/* GRID */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    padding: 50px 8%;
+}
+
+/* CARD */
+.card {
+    background: #fff;
+    padding: 18px;
+    border-radius: 20px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* IMAGE */
+.card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+/* TITLE */
+.card h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+/* PRICE */
+.price {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* DESC */
+.desc {
+    font-size: 12px;
+    color: #777;
+    margin: 5px 0 10px;
+}
+
+/* BUTTON */
+.card a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background: #7d4a45;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.card a:hover {
+    background: var(--primary);
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 100px 20px;
+    background: #f3e8e6;
+    margin: 60px 8%;
+    border-radius: 25px;
+}
+
+.cta h2 {
+    font-size: 36px;
+    color: var(--primary);
+}
+
+.cta p {
+    color: #777;
+    margin: 10px 0 20px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.primary {
+    background: var(--primary);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+.secondary {
+    background: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: var(--primary);
+}
+.nav-links ,.nav-actions{
+    display: flex;
+
+}
+@media (max-width: 900px) {
+
+   @media (max-width: 900px) {
+    /* 1. الحاوية الأساسية: مرونة كاملة في سطر واحد */
+    header, #navbar {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 0 5px !important; 
+        height: 40px !important;
+        width: 100% !important;
+        gap: 0 !important;
+    }
+
+    /* 2. اللوجو: ثابت في مكانه على الشمال */
+    .logo {
+        font-size: 0.65rem !important;
+        flex-shrink: 0 !important;
+        margin-right: 5px !important;
+    }
+
+    /* 3. دمج اللينكات والاكشنز (الكارت والاسم) في خط واحد */
+    nav, .nav-links, .nav-actions, .user-box {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 4px !important; /* المسافة اللي بتخلي الشكل منظم */
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* 4. توحيد الاستايل لكل النصوص (اللينكات + الكارت + الاسم) */
+    .nav-links a, 
+    .nav-actions a, 
+    #user-display {
+        display: inline-block !important;
+        font-size: 0.48rem !important; /* الحجم اللي طلبتيه */
+        font-weight: 800 !important;
+        color: var(--text-main) !important;
+        text-decoration: none !important;
+        white-space: nowrap !important; /* يمنع الاسم ينزل سطر جديد مهما حصل */
+        text-transform: uppercase;
+    }
+
+    /* 5. تمييز الكارت واسم المستخدم بنفس اللون والخط اللي تحت */
+    .nav-actions a, #user-display {
+        color: #b76e79 !important;
+        border-bottom: 1px solid #b76e79 !important;
+    }
+
+    /* 6. إخفاء أي عناصر زيادة عشان نوفر مساحة */
+    .dropdown, .user-box i {
+        display: none !important;
+    }
+}
+    /* تمييز الكارت بلون مختلف قليلاً إذا أردتِ */
+   .cart {
+        color: #b76e79 !important;
+        text-decoration: underline !important;
+        cursor: pointer !important;
+    }
+
+    /* --- 5. باقي الصفحة (المنتجات) --- */
+    .products-hero {
+        padding: 30px 10px !important;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image img {
+        width: 140px !important; 
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .card h3 {
+        font-size: 0.7rem !important;
+    }
+}

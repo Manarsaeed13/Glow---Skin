@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Lato:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --primary-color: #92544d; 
+    --accent-color: #e59886;  
+    --bg-color: #faf8f5;      
+    --white: #ffffff;
+    --gray: #e0e0e0;
+    --text-dark: #2c2c2c;
+    --text-light: #5a5a5a;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', 'Lato', sans-serif;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, .logo {
+    font-family: var(--font-heading);
+    font-weight: 600;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(253, 248, 246, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    flex: 1;
+}
+
+nav {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .active-link {
+    color: var(--primary-color) !important;
+}
+
+.active-link {
+    position: relative;
+}
+
+.active-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    bottom: -5px;
+    left: 0;
+}
+
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.search-box input {
+    background: #f0f0f0;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    width: 140px;
+    outline: none;
+}
+
+.user-box {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: absolute;
+    top: 150%;
+    right: 0;
+    background: var(--white);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.user-box:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    padding: 12px 15px;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-item:hover {
+    background: var(--bg-color);
+    color: var(--primary-color);
+}
+
+
+main {
+    padding-top: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.page {
+    display: none;
+    width: 100%;
+    max-width: 950px;
+    padding: 20px;
+    animation: slideIn 0.5s ease-out;
+}
+
+.active {
+    display: flex;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.login-card {
+    background: var(--white);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    display: flex;
+    width: 100%;
+    min-height: 550px;
+}
+
+.image-side {
+    background-color: var(--accent-color);
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.form-side {
+    flex: 1.2;
+    padding: 45px 55px;
+    background: white;
+}
+
+.input-group {
+    margin-bottom: 18px;
+    text-align: left;
+}
+label { 
+    display: block; 
+    margin-bottom: 6px; 
+    font-weight: 600; 
+    color: #555; 
+    font-size: 13px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--gray);
+    border-radius: 10px;
+    background: #fcfcfc;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 8px rgba(229, 152, 134, 0.2);
+}
+
+/* 6. الأزرار الموحدة */
+button, .shop-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#mainBtn {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.shop-btn {
+    padding: 8px 22px;
+    font-size: 0.85rem;
+}
+
+button:hover, .shop-btn:hover {
+    background-color: #7a453f;
+    transform: translateY(-2px);
+}
+
+.switch-auth {
+    text-align: center;
+    margin-top: 25px;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+
+footer {
+    background: var(--white);
+    padding: 5rem 8% 2rem;
+    border-top: 1px solid #eee;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.footer-col h4 {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.footer-col a:hover { color: var(--primary-color); }
+
+.footer-bottom {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #f0f0f0;
+    color: #999;
+    font-size: 0.85rem;
+}
+
+/* 8. صفحة الـ Home */
+.home-content {
+    background: white;
+    padding: 60px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.boxes-container {
+    margin-top: 40px;
+    display: flex;
+    gap: 15px;
+}
+
+.box {
+    padding: 30px;
+    border-radius: 15px;
+    color: white;
+    flex: 1;
+    font-weight: 600;
+}
+
+.box-accent { background: var(--accent-color); }
+.box-primary { background: var(--primary-color); }

@@ -1,0 +1,379 @@
+#hero {
+    height: 100vh;
+    background-image: url('images/23\ -\ Copy.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center; 
+    align-items: flex-start;  
+
+    padding-top: 30px; 
+    padding-left: 60px; }
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: var(--white);
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.description {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    transition: background 0.3s, transform 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+section {
+    padding: 6rem 5%;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+}
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+
+.about-text {
+    flex: 1;
+}
+
+
+.about-text h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+
+
+.about-text p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    line-height: 1.9;
+}
+
+
+.about-image img {
+    width: 650px;
+    height: 600px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.best-sellers-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  
+   
+    
+}
+
+.product-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+#products .product-card:hover {
+ background-color: #f1b5bda1;;
+
+}
+
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.product-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 0.8rem;
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.add-to-cart:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.review-card {
+    background: var(--white);
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+
+.review-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+.review-author {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.stars {
+    color: #f4c542;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+#cta {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    text-align: center;
+    color: var(--white);
+    padding: 5rem 20px;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--white);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--primary);
+}
+
+.btn-secondary:hover {
+    background: var(--bg-color);
+    color: var(--primary-dark);
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.newsletter-form input {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    width: 100%;
+}
+
+.newsletter-form button {
+    padding: 0.8rem 1.5rem;
+    background: var(--text-dark);
+    color: var(--white);
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.newsletter-form button:hover {
+    background: var(--primary);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+
+     .cart {
+        
+        color: #b76e79 !important;
+    }
+
+    /* --- 1. الهيدر: رص العناصر كلها في سطر واحد --- */
+    #navbar {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 6px 9px !important;
+        height: 45px !important; /* ارتفاع نحيف وراقي */
+        flex-wrap: nowrap !important; 
+    }
+
+    /* --- 2. اللوجو: تصغير بسيط ليترك مساحة للينكات --- */
+    .logo {
+         gap: 6px !important;
+        font-size: 0.8rem !important; 
+        margin: 0 !important;
+        flex-shrink: 0 !important;
+        
+    }
+
+    /* --- 3. حاوية الروابط: تضم الكل بما فيهم Order Now و Cart --- */
+    .nav-links, .nav-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important; /* مسافة متساوية بين كل العناصر */
+        margin: 0 !important;
+    }
+
+    /* --- 4. توحيد حجم الخط لكل الروابط (بما فيهم الكارت) --- */
+    .nav-links a, .nav-actions a, .cart, .user-display {
+        font-size: 0.55rem !important; /* حجم موحد كما في الصورة */
+        font-weight: 700 !important;
+        text-transform: uppercase;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        color: var(--text-main) !important;
+        padding: 0 !important;
+    }
+
+    /* إظهار Order Now (تأكدي أن الـ href مطابق للينك عندك) */
+    .nav-links a[href="testt.html"], 
+    .nav-links a[href*="order"] {
+        display: inline-block !important; 
+    }
+
+    /* تمييز الكارت بلون مختلف قليلاً إذا أردتِ */
+    /* .cart {
+        
+        color: #b76e79 !important;
+    } */
+
+    /* --- 5. باقي الصفحة (المنتجات) --- */
+    .products-hero {
+        padding: 30px 10px !important;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image img {
+        width: 140px !important; 
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .card h3 {
+        font-size: 0.7rem !important;
+    }
+}
